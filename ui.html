@@ -1,0 +1,21 @@
+<!--
+ Copyright (c) 2014, 2020, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+<div class="text-bar-container">
+  <oj-input-text id="text-bar" value="{{toDo}}"></oj-input-text>
+  <div class="btn-container">
+    <oj-button class="btn" on-oj-action="[[search]]">Search</oj-button>
+    <oj-button class="btn" on-oj-action="[[addToList]]">Stick</oj-button>
+  </div>
+</div>
+<div class="notes-container">
+  <oj-bind-for-each data="[[list]]">
+    <template data-oj-as="item">
+      <oj-action-card id="notes" on-oj-action="[[remove]]" class="oj-sm-margin-2x demo-card-content">
+          <oj-bind-text value="[[item.data]]"></oj-bind-text>
+      </oj-action-card>
+    </template>
+  </oj-bind-for-each>
+</div>
